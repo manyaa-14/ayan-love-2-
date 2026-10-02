@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE AYAN FILES</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       OPENING / ACCESS SCREEN
+  ========================== -->
+
+  <main id="openingScreen" class="screen active">
+
+    <div class="classified">TOP SECRET</div>
+
+    <div class="case-file">
+      <p>CASE FILE: <span>AYAN-001</span></p>
+      <p>SUBJECT: <span>AYAN</span></p>
+      <p>INVESTIGATOR: <span>MANYA</span></p>
+      <p>STATUS: <span>OPEN</span></p>
+    </div>
+
+    <div class="warning">
+      ⚠ UNAUTHORIZED ACCESS PROHIBITED ⚠
+    </div>
+
+    <button onclick="startInvestigation()" class="main-button">
+      ACCESS CASE →
+    </button>
+
+  </main>
+
+
+  <!-- =========================
+       LOADING SCREEN
+  ========================== -->
+
+  <main id="loadingScreen" class="screen">
+
+    <div class="terminal">
+
+      <p id="loadingText">Initializing investigation...</p>
+
+      <div class="loading-bar">
+        <div id="loadingProgress"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       MAIN DASHBOARD
+  ========================== -->
+
+  <main id="dashboard" class="screen">
+
+    <header class="dashboard-header">
+
+      <div>
+        <p class="small-label">TOP SECRET // AYAN-001</p>
+        <h1>THE AYAN FILES</h1>
+      </div>
+
+      <div class="case-status">
+        CASE STATUS:
+        <span>ACTIVE</span>
+      </div>
+
+    </header>
+
+
+    <!-- Progress -->
+
+    <section class="progress-section">
+
+      <div class="progress-info">
+        <span>CASE PROGRESS</span>
+        <span id="progressPercent">0%</span>
+      </div>
+
+      <div class="progress-bar">
+        <div id="caseProgress"></div>
+      </div>
+
+    </section>
+
+
+    <!-- Investigation Sections -->
+
+    <section class="file-grid">
+
+      <button class="file-card" onclick="openSection('evidence')">
+        <span class="file-icon">🔎</span>
+        <span class="file-number">FILE 001</span>
+        <strong>EVIDENCE ROOM</strong>
+        <small>Review collected evidence</small>
+      </button>
+
+
+      <button class="file-card" onclick="openSection('missions')">
+        <span class="file-icon">🧩</span>
+        <span class="file-number">FILE 002</span>
+        <strong>MISSION ROOM</strong>
+        <small>Complete investigation missions</small>
+      </button>
+
+
+      <button class="file-card" onclick="openSection('messages')">
+        <span class="file-icon">📱</span>
+        <span class="file-number">FILE 003</span>
+        <strong>INTERCEPTED MESSAGES</strong>
+        <small>Recovered communications</small>
+      </button>
+
+
+      <button class="file-card" onclick="openSection('archive')">
+        <span class="file-icon">🗃️</span>
+        <span class="file-number">FILE 004</span>
+        <strong>MANYA'S ARCHIVE</strong>
+        <small>Personal observations</small>
+      </button>
+
+
+      <button class="file-card locked" id="confidentialCard" onclick="openSection('confidential')">
+        <span class="file-icon">💌</span>
+        <span class="file-number">FILE 005</span>
+        <strong>CONFIDENTIAL FILES</strong>
+        <small>🔒 Clearance required</small>
+      </button>
+
+
+      <button class="file-card locked" id="restrictedCard" onclick="openSection('restricted')">
+        <span class="file-icon">🔐</span>
+        <span class="file-number">FILE 006</span>
+        <strong>RESTRICTED AREA</strong>
+        <small>🔒 Maximum clearance</small>
+      </button>
+
+    </section>
+
+
+    <footer>
+      <p>AYAN-001 // PROPERTY OF INVESTIGATOR MANYA</p>
+    </footer>
+
+  </main>
+
+
+  <!-- =========================
+       CONTENT WINDOW
+  ========================== -->
+
+  <div id="contentOverlay" class="overlay">
+
+    <div class="content-window">
+
+      <button class="close-button" onclick="closeSection()">×</button>
+
+      <div id="content"></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
